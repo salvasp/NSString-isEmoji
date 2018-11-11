@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NSString_isEmoji" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KET-Bu-m60"/>
+                        <viewControllerLayoutGuide type="bottom" id="PIB-Mf-v7Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ACw-u1-edZ">
+                                <rect key="frame" x="2" y="20" width="181.5" height="647"/>
+                                <color key="backgroundColor" red="0.81000000000000005" green="0.90000000000000002" blue="0.8145" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="gZP-UF-LxX"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="7C3-w5-omR"/>
+                                </connections>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gbq-d5-JTQ">
+                                <rect key="frame" x="191.5" y="20" width="181.5" height="647"/>
+                                <color key="backgroundColor" red="0.90000000000000002" green="0.81000000000000005" blue="0.81269850136544453" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="JxB-Da-hEk"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="OA8-oC-HPg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PIB-Mf-v7Z" firstAttribute="top" secondItem="Gbq-d5-JTQ" secondAttribute="bottom" id="5dZ-ge-PGE"/>
+                            <constraint firstItem="Gbq-d5-JTQ" firstAttribute="leading" secondItem="ACw-u1-edZ" secondAttribute="trailing" constant="8" id="AVe-j7-0xz"/>
+                            <constraint firstItem="Gbq-d5-JTQ" firstAttribute="top" secondItem="KET-Bu-m60" secondAttribute="bottom" id="Dpy-oG-3pA"/>
+                            <constraint firstAttribute="trailing" secondItem="Gbq-d5-JTQ" secondAttribute="trailing" constant="2" id="NH7-Jb-fHa"/>
+                            <constraint firstItem="ACw-u1-edZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="2" id="Ucd-rT-vC4"/>
+                            <constraint firstItem="ACw-u1-edZ" firstAttribute="top" secondItem="KET-Bu-m60" secondAttribute="bottom" id="WmT-SK-GcS"/>
+                            <constraint firstItem="ACw-u1-edZ" firstAttribute="width" secondItem="Gbq-d5-JTQ" secondAttribute="width" id="k22-Yp-O0R"/>
+                            <constraint firstItem="PIB-Mf-v7Z" firstAttribute="top" secondItem="ACw-u1-edZ" secondAttribute="bottom" id="o5Q-fj-cqP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="supportedEmojisTable" destination="ACw-u1-edZ" id="PIL-Tr-knv"/>
+                        <outlet property="unsupportedEmojisTable" destination="Gbq-d5-JTQ" id="EBX-1H-yj8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
