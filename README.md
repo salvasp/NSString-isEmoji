@@ -8,4 +8,4 @@
 * Does not use UILabel - can run on background
 * Does not use Character() - no crashes on old iOS version
 
-## Run the Example to try
+### Run the Example to try
