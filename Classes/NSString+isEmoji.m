@@ -62,7 +62,7 @@
                     CGFloat blue = (CGFloat)rawData[byteIndex+2];
                     
                     CGFloat h, s, b, a;
-                    UIColor *c = [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:1.0f]; //error
+                    UIColor *c = [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:1.0f];
                     [c getHue:&h saturation:&s brightness:&b alpha:&a];
                     
                     b /= 255.0f;
