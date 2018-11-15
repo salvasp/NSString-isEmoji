@@ -24,15 +24,13 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        
         loadEmojis()
     }
     
     
     func loadEmojis(){
-        
         for emoji in emojis {
-            DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {[weak self] in
+            DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {[weak self] in
                 let (currentEmoji, isEmoji) = (emoji, (emoji as NSString).isEmoji())
                 DispatchQueue.main.async {
                     guard let strongSelf = self else { return }
@@ -62,9 +60,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        (view as! UITableViewHeaderFooterView).contentView.backgroundColor = tableView == supportedEmojisTable ? .green : .red
-        (view as! UITableViewHeaderFooterView).textLabel?.textAlignment = .center
-        (view as! UITableViewHeaderFooterView).textLabel?.adjustsFontSizeToFitWidth = true
+        guard let view = view as? UITableViewHeaderFooterView else { return }
+        view.contentView.backgroundColor = tableView == supportedEmojisTable ? .green : .red
+        view.textLabel?.textAlignment = .center
+        view.textLabel?.adjustsFontSizeToFitWidth = true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,7 +80,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: "emojiCell")
         if cell == nil {
-            cell =  UITableViewCell(style: .default, reuseIdentifier: "emojiCell")
+            cell = UITableViewCell(style: .default, reuseIdentifier: "emojiCell")
         }
         cell?.selectionStyle = .default
         cell?.backgroundColor = .clear

@@ -6,7 +6,7 @@
 @implementation NSString(Emoji)
 
 - (BOOL)isEmoji {
-    @autoreleasepool {        
+    @autoreleasepool {
         CGRect rect = [self boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)
                                       options: (NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
                                    attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:[UIFont smallSystemFontSize]]}
