@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     func loadEmojis(){
         for emoji in emojis {
             DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {[weak self] in
-                let (currentEmoji, isEmoji) = (emoji, (emoji as NSString).isEmoji())
+                let (currentEmoji, isEmoji) = (emoji, (NSString(string: emoji)).isEmoji())
                 DispatchQueue.main.async {
                     guard let strongSelf = self else { return }
                     if isEmoji {
